@@ -16,7 +16,7 @@ import java.util.List;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<StandardError> exception(Exception e, HttpServletRequest request){
+    public ResponseEntity<StandardError> exception(Exception e, HttpServletRequest request) {
         String error = "Server error";
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
         StandardError err = new StandardError(Instant.now(), status.value(), error,
@@ -40,7 +40,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(NoMoreCodinomesAvailableException.class)
-    public ResponseEntity<StandardError> noMoreCodinomesAvailableException(Exception e, HttpServletRequest request){
+    public ResponseEntity<StandardError> noMoreCodinomesAvailableException(Exception e, HttpServletRequest request) {
         String error = "No more codinomes available.";
         HttpStatus status = HttpStatus.BAD_REQUEST;
         StandardError err = new StandardError(Instant.now(), status.value(), error,

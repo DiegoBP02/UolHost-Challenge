@@ -9,7 +9,7 @@ import java.util.List;
 
 public class TestDataBuilder {
 
-    public static User buildUser(){
+    public static User buildUser() {
         return User.builder()
                 .email("email@email.com")
                 .name("name")
@@ -19,7 +19,7 @@ public class TestDataBuilder {
                 .build();
     }
 
-    public static RegisterDto buildRegisterDto(){
+    public static RegisterDto buildRegisterDto() {
         return RegisterDto.builder()
                 .name("name")
                 .email("email@email.com")

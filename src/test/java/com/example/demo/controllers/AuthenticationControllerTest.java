@@ -44,7 +44,7 @@ class AuthenticationControllerTest extends ApplicationConfigTests {
     private MockHttpServletRequestBuilder buildMockRequestPost
             (Object requestObject) throws Exception {
         return MockMvcRequestBuilders
-                .post(PATH )
+                .post(PATH)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestObject));

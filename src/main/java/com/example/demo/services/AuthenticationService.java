@@ -32,7 +32,7 @@ public class AuthenticationService {
         HeroGroup heroGroup = registerDto.getHeroGroup();
         String randomCodinome = getRandomCodinome(heroGroup);
 
-        if(randomCodinome == null){
+        if (randomCodinome == null) {
             throw new NoMoreCodinomesAvailableException();
         }
 
@@ -61,7 +61,7 @@ public class AuthenticationService {
         int maxAttemps = codinomes.size();
         int attemps = 0;
 
-        while (attemps < maxAttemps){
+        while (attemps < maxAttemps) {
             int randomIndex = new Random().nextInt(codinomes.size());
             String randomCodinome = codinomes.get(randomIndex);
 
