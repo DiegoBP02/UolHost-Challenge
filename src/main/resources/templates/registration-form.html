@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+<h1>UOL player registration</h1>
+<form action="/view/register" method="post" th:object="${registerDto}">
+    <label>Name:</label>
+    <input type="text" th:field="*{name}"/><br/>
+
+    <label>Email:</label>
+    <input type="email" th:field="*{email}"/><br/>
+
+    <label>Phone:</label>
+    <input type="text" th:field="*{phone}"/><br/>
+
+    <label>Hero Group:</label>
+    <select th:field="*{heroGroup}">
+        <option th:each="group : ${T(com.example.demo.enums.HeroGroup).values()}" th:value="${group}"
+                th:text="${group}"/>
+    </select><br/>
+
+    <input type="submit" value="Register"/>
+
+    <br/><br/>
+    <a href="/view/users">View All Users Page</a>
+</form>
+</body>
+</html>
