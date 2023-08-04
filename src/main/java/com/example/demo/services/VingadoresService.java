@@ -2,12 +2,14 @@ package com.example.demo.services;
 
 import com.example.demo.entities.Vingadores;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
+@Service
 public class VingadoresService {
 
     public List<String> getCodinomes() {
@@ -19,7 +21,7 @@ public class VingadoresService {
         }
     }
 
-    public static Vingadores jsonParser() throws IOException {
+    private static Vingadores jsonParser() throws IOException {
         try {
             final String url = "https://raw.githubusercontent.com/uolhost/test-backEnd-Java/master/referencias/vingadores.json";
             ObjectMapper jsonMapper = new ObjectMapper();
